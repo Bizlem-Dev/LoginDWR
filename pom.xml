@@ -1,0 +1,121 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+        <groupId>org.apache.sling</groupId>
+        <artifactId>sling</artifactId>
+        <version>13</version>
+        <relativePath>../../parent/pom.xml</relativePath>
+    </parent>
+  <groupId>com.loginService.dwr</groupId>
+  <artifactId>loginDwr</artifactId>
+  <packaging>bundle</packaging>
+  <version>0.0.1</version>
+    <build>
+        <plugins>
+
+
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-scr-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+
+                        <Sling-Initial-Content>SLING-INF/</Sling-Initial-Content>
+<Embed-Dependency>*;scope=compile;inline=false</Embed-Dependency>
+						<Embed-Transitive>true</Embed-Transitive>
+
+						<Import-Package>
+	!org.json.simple.*,
+	!com.google.inject.*,
+	!com.google.inject.binder.*,
+	!com.google.inject.matcher.*,
+	!com.google.inject.util.*,
+	!com.opensymphony.webwork.dispatcher.*,
+	!com.opensymphony.webwork.dispatcher.mapper.*,
+	!com.opensymphony.xwork.*,
+	!com.opensymphony.xwork.config.*,
+	!com.opensymphony.xwork.util.*,
+	!com.yahoo.platform.yui.compressor.*,
+	!dojox.cometd.*,
+	!nu.xom.*,
+	!org.aopalliance.intercept.*,
+	!org.apache.bsf.*,
+	!org.apache.catalina.*,
+	!org.apache.struts.action.*,
+	!org.apache.struts.config.*,
+	!org.apache.struts.util.*,
+	!org.dojotoolkit.shrinksafe.*,
+	!org.dom4j.*,
+	!org.dom4j.io.*,
+	!org.hibernate.*,
+	!org.hibernate.classic.*,
+	!org.hibernate.engine.*,
+	!org.hibernate.proxy.*,
+	!org.jdom.*,
+	!org.jdom.input.*,
+	!org.jdom.output.*,
+	!org.joda.time.*,
+	!org.mozilla.javascript.tools.*,
+	!org.mozilla.javascript.tools.shell.*,
+	!org.springframework.aop.support.*,
+	!org.springframework.beans.*,
+	!org.springframework.beans.factory.*,
+	!org.springframework.beans.factory.config.*,
+	!org.springframework.beans.factory.support.*,
+	!org.springframework.beans.factory.xml.*,
+	!org.springframework.context.*,
+	!org.springframework.context.annotation.*,
+	!org.springframework.context.support.*,
+	!org.springframework.core.type.filter.*,
+	!org.springframework.stereotype.*,
+	!org.springframework.util.*,
+	!org.springframework.util.xml.*,
+	!org.springframework.web.context.*,
+	!org.springframework.web.context.support.*,
+	!org.springframework.web.servlet.*,
+	!org.springframework.web.servlet.handler.*,
+	!org.springframework.web.servlet.mvc.*,
+	!org.springframework.web.servlet.support.*,
+	*
+
+						</Import-Package>
+
+
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+        <pluginManagement>
+            <plugins>
+                <!--This plugin's configuration is used to store Eclipse m2e settings 
+                    only. It has no influence on the Maven build itself. -->
+
+            </plugins>
+        </pluginManagement>
+    </build>
+    <repositories>
+        <repository>
+            <id>repository.sonatype.org -public</id>
+            <name>DWR repository</name>
+            <url>https://oss.sonatype.org/content/groups/public</url>
+        </repository>
+    </repositories>
+  <dependencies>
+	  <dependency>
+            <groupId>org.directwebremoting</groupId>
+            <artifactId>dwr</artifactId>
+            <version>3.0.0-rc3-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+	<groupId>com.googlecode.json-simple</groupId>
+	<artifactId>json-simple</artifactId>
+	<version>1.1.1</version>
+</dependency>
+        
+    </dependencies>
+</project>
